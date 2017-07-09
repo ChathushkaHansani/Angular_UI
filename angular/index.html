@@ -1,0 +1,115 @@
+<html ng-app="registration">
+<head>
+    <title>Angular JS</title>
+    <!--<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+    <script src="angular.min.js"></script>
+    <script src="registrationController.js"></script>
+
+
+    <link href="form.css" rel="stylesheet">
+    <link href="bootstrap.css" rel="stylesheet">
+<style rel="stylesheet">
+    .margin-al{
+         margin-top:-20px;
+    }
+</style>
+
+
+    </head>
+    <body>
+
+
+    <div id="contact">
+        <div class="section-content">
+            <h1 class="section-header margin-al">
+                Register<span class="content-header wow fadeIn"
+                              data-wow-delay="0.2s" data-wow-duration="2s"> Pet owner</span>
+            </h1>
+            <!-- <h3>Add Owner Information!</h3> -->
+        </div>
+        <div class="contact-section margin-al">
+            <div class="container" ng-controller="registrationcontroller">
+                <form>
+
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6 container">
+                        <div class="form-group">
+                            <label>Your name</label>
+                            <input name="Name" ng-model="Name"/>
+                            <!--<p> {{Name}}</p>-->
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input name="City" ng-model="City"/>
+                           <!-- <p>{{City}}</p>-->
+                            <div class="form-group">
+                                <label>Mobile No.</label>
+                                <input name="Mobile" ng-model="Mobile"/>
+                                <!--<p>{{Mobile}}</p>-->
+                            </div>
+                        </div>
+                        <div>
+                            <!-- <button type="button" class="btn btn-default submit">
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i> Send Message
+                        </button> -->
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6 " >
+                        <div class="form-group">
+                            <label>Pet1 name</label>
+                            <input name="pet1Name" ng-model="pet1Name"/>
+                            <!--<p> {{pet1Name}}</p>-->
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <input name="pet1Type" ng-model="pet1Type"/>
+                            <!--<p> {{pet1Type}}</p>-->
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="form-group">
+                            <label>Pet2 name</label>
+                            <input name="pet2Name" ng-model="pet2Name"/>
+                           <!-- <p> {{pet2Name}}</p>-->
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <input name="pet2Type" ng-model="pet2Type"/>
+                           <!-- <p> {{pet2Type}}</p>-->
+                        </div>
+                        <br/>
+                        <button class="btn btn-primary" ng-click="SendData()">Save</button>
+
+                    </div>
+
+
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!--<div ng-controller="registrationcontroller">
+        <h1>{{employee.title}}</h1>
+        <div>Name: {{employee.fname}}</div>
+        <div>City: {{employee.city}}</div>
+        <div>City: {{employee.mobile}}</div>
+        <div>
+            <img src="{{employee.image}}" title="{{employee.name}}" width="250" height="250"/>
+        </div>
+    </div>-->
+
+    </body>
+
+</html>
