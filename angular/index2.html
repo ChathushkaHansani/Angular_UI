@@ -1,0 +1,59 @@
+<html ng-app="view">
+<head>
+    <title>Owner Details</title>
+    <script src="angular.min.js"></script>
+    <script src="displayController.js"></script>
+
+    <link href="form.css" rel="stylesheet">
+    <link href="bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="contact">
+    <div class="section-content">
+        <h1 class="section-header margin-al">
+            View <span class="content-header wow fadeIn"
+                          data-wow-delay="0.2s" data-wow-duration="2s">Owner Details</span>
+        </h1>
+        <!-- <h3>Add Owner Information!</h3> -->
+    </div>
+    <div class="contact-section margin-al">
+        <div class="container" ng-controller="displayController">
+           <!-- <div onload="getOwner()">-->
+                <button ng-click="getOwner()">on click</button>
+    {{owner}}
+                <table border="1" style="color: #fff; padding: 15;">
+                    <thead>
+                    <th>Owner Name</th>
+                    <th>Owner mobile </th>
+                    <th>Owner City </th>
+                    <th>Pets</th>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="owners in owner.data">
+                        <td>{{owners.ownerName}}</td>
+                        <td>{{owners.ownerMobile}}</td>
+                        <td>{{owners.ownerCity}}</td>
+                        <td><table border="1" style="color: #fff;">
+                            <thead>
+                            <th>Pet Name</th>
+                            <th>Pet Type</th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{owners.petData[0].name}}</td>
+                                <td>{{owners.petData[0].type}}</td>
+                            </tr>
+                            </tbody>
+                        </table></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

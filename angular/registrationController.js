@@ -2,36 +2,41 @@
 
     var app=angular.module("registration",[]);
     
-    var regcrl= function($scope, $http){
+    var regcrl= function($scope, $http, $log){
        $scope.SendData= function () {
-    /*    var data = {
-            'ownerName': $scope.Name,
-            'ownerCity': $scope.City,
-            'ownerMobile': $scope.Mobile
-        }*/
+ 
+var payload={
+	'ownerName': $scope.Name, 
+	'ownerCity': $scope.City, 
+	'ownerMobile': $scope.Mobile, 
+		"petData":[
+				{
+					"name":$scope.pet1Name,
+					"type":$scope.pet1Type
+				},
+				{
+					"name":$scope.pet2Name,
+					"type":$scope.pet2Type
+				}
+				]
+			};
 
-     /*   var data = {
-            call1:
-                function (value) {
-                    return {'ownerName': $scope.Name, 'ownerCity': $scope.City, 'ownerMobile': $scope.Mobile, 'petData':[{'name':$scope.pet1Name, 'type':$scope.pet1Type},{'name':$scope.pet2Name, 'type':$scope.pet2Type}]};
-                 }
-        }*/
-       // alert($scope.Name +  $scope.City + $scope.Mobile );
+        var req={
+        method:"POST",
+        url: "http://localhost:8090/addOwner",
+        headers: {'Content-type':"application/json",
+		},
+        data:payload 
+        }
 
-
-        /*var res = $http.post('http://localhost:8080/addOwner', data);*/
-
-        $http({
-            url: "http://localhost:8080/addOwner",
-            method: "POST",
-            params: {'ownerName': $scope.Name, 'ownerCity': $scope.City, 'ownerMobile': $scope.Mobile}
-            })
-     /*   res.success(function (data, status, headers, config) {
-                 $scope.PostDataResponse = data;
-        });
-        res.error(function(data, status, headers, config) {
-        			alert( "failure message: " + JSON.stringify({data: data}));
-        		});*/
+        var onSuccess=function(response){
+        $scope.result="OK";
+        }
+        var onError=function(reason){
+               $scope.result="Error";
+               }
+        $http(req).then(onSuccess);
+     
        }
     }
  

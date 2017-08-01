@@ -1,6 +1,6 @@
 <html ng-app="registration">
 <head>
-    <title>Angular JS</title>
+    <title>Owner Registration</title>
     <!--<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
     <script src="angular.min.js"></script>
     <script src="registrationController.js"></script>
@@ -29,8 +29,8 @@
         </div>
         <div class="contact-section margin-al">
             <div class="container" ng-controller="registrationcontroller">
-                <form>
-
+			<div>{{result}}</div>
+                <form>                
                     <div class="col-md-6"></div>
                     <div class="col-md-6 container">
                         <div class="form-group">
@@ -91,15 +91,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
     <!--<div ng-controller="registrationcontroller">
         <h1>{{employee.title}}</h1>
         <div>Name: {{employee.fname}}</div>
